@@ -29,8 +29,6 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        # self.pushButton.clicked.connect(MainWindow.close) #绑定内置的关闭槽函数
-        # self.pushButton.clicked.connect(self.showMessage) # 绑定自定义槽函数
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -38,10 +36,6 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton.setText(_translate("MainWindow", "关闭"))
 
-    # def showMessage(self):
-    #     from PyQt5.QtWidgets import QMessageBox  # 导入QMessageBox类
-    #     # 使用information()方法弹出信息提示框
-    #     QMessageBox.information(MainWindow,"提示框","欢迎进入PyQt5编程世界",QMessageBox.Yes | QMessageBox.No,QMessageBox.Yes)
 
 import sys
 # 主方法，程序从此处启动PyQt设计的窗体
