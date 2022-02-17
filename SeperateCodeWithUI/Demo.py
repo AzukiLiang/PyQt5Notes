@@ -11,7 +11,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def showMessage(self):
         from PyQt5.QtWidgets import QMessageBox  # 导入QMessageBox类
-        # 使用information()方法弹出信息提示框
+        # 使用information()方法弹出信息提示
         QMessageBox.information(mainWindow, "提示框", "欢迎进入PyQt5编程世界", QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
 
 

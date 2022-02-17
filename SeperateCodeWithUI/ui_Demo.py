@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
 
 
 import sys
-# 主方法，程序从此处启动PyQt设计的窗体
+# 主方法，程序从此处启动PyQt设计的窗
 if __name__ == '__main__':
    app = QtWidgets.QApplication(sys.argv)
    app.setStyle("Fusion") # 设置窗口风格
