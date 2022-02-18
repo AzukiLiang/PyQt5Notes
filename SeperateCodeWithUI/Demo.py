@@ -8,6 +8,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__(parent)
         self.setupUi(self)
         self.pushButton.clicked.connect(self.showMessage)
+        self.setWindowFlags(QtCore.Qt.WindowCloseButtonHint)
 
     def showMessage(self):
         from PyQt5.QtWidgets import QMessageBox  # 导入QMessageBox类
