@@ -15,7 +15,7 @@ class leditTestWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.lineEditInt.setPlaceholderText('请在此处输入1~99的整数')
         # 实例化整形验证器，并设置范围为1-99，并在lineEditInt控件中设置该验证器
-        intValidator = QIntValidator(self)
+        intValidator = QIntValidator()
         intValidator.setRange(1, 99)
         self.lineEditInt.setValidator(intValidator)
 

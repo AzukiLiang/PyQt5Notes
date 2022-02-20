@@ -44,7 +44,36 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+        self.spinBox.setMinimum(0)
+        self.spinBox.setMaximum(10)
+        self.spinBox.setSingleStep(2)
+        self.spinBox.setValue(3)
+
+        # self.doubleSpinBox.setMinimum(0)
+        # self.doubleSpinBox.setMaximum(10)
+        self.doubleSpinBox.setSingleStep(0.5)
+        self.doubleSpinBox.setRange(0, 10)
+        self.doubleSpinBox.setDecimals(3)
+
+        self.spinBox.valueChanged.connect(self.showSpinBoxNumbers)
+        self.doubleSpinBox.valueChanged.connect(self.showSpinBoxNumbers)
+
+    def showSpinBoxNumbers(self):
+        self.label.setText('整数控件数字为：' + str(self.spinBox.value()) + '     '
+                                                                    '小数控件数字为：' + str(self.doubleSpinBox.value()))
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "当前未选择数字"))
+
+
+if __name__ == '__main__':
+    import sys
+
+    app = QtWidgets.QApplication(sys.argv)
+    mainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(mainWindow)
+    mainWindow.show()
+    app.exit(app.exec_())
