@@ -104,6 +104,9 @@ class Ui_MainWindow(object):
         regExpValidator.setRegExp(reg)
         self.lineEdit.setValidator(regExpValidator)
 
+        self.lcnDec.setDigitCount(10)
+        self.lcnDec.display('AAA')
+
         self.lineEdit.editingFinished.connect(self.getValue)
 
     def getValue(self):
