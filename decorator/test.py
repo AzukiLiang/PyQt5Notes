@@ -1,38 +1,31 @@
-import time
+def decorator(num):
+    print(num)
+
+    def dec2(cls):
+        print(cls)
+        return cls
+
+    return dec2
 
 
-class Foo():
-    """
-    这是一个foo类
-    """
-    def __init__(self, func):  # 初始化函数中传入函数对象的参数
-        print("开始初始化")
-        self._func = func
-
-    def __call__(self):  # 定义__call__方法，直接实现装饰功能
-        print('我开始装饰啦')
-        start_time = time.time()
-        self._func()
-        end_time = time.time()
-        print('花费了 %.2f' % (end_time - start_time))
+def decorator2(cls):
+    print(cls)
+    return cls
 
 
-@Foo  # bar=Foo(bar)
-def bar():
-    print('bar函数的执行时间为：')
-    time.sleep(2.5)
+@decorator(1)
+class Model(object):
+    test_val = 0
+
+    def __init__(self):
+        pass
 
 
-bar()  # bar=Foo(bar)()，没有嵌套关系了,直接执行Foo的 __call__方法，实现装饰功能
-print(bar.__doc__)
+@decorator2
+class SubModel(Model):
+    def __init__(self):
+        pass
 
-# class SayLove:
-#     def __init__(self, content):
-#         self.content = content
-#
-#     def __call__(self, name):
-#         print(name + self.content)
-#
-#
-# t = SayLove(", I love you.")
-# t('Ning')
+
+if __name__ == '__main__':
+    model = SubModel()

@@ -50,8 +50,15 @@ def print_odds(lim=10000):
 
 if __name__ == '__main__':
     print_odds(5)
-    print(print_odds.__class__)
     print_odds(5)
+    print_odds.func(5)
+    print(print_odds.__class__)
+    print(print_odds.__doc__)
     # print(print_odds.__name__)
     # print(print_odds.__doc__)
     # print(hasattr(print_odds, '__call__'))
+
+    # print_odds = CountTimeWrapper(print_odds)
+    # # countTimeWrapper.func(5)
+    # print_odds(5)
+    # print_odds(5)

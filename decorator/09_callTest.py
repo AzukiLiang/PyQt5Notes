@@ -16,3 +16,5 @@ class SayLove:
 
 t = SayLove(", I love you.")
 t('Ning')
+
+SayLove(", I love you.")('Ning')
